@@ -7,6 +7,7 @@ User=radmark
 Group=radmark
 WorkingDirectory=/home/radmark/app/src
 Environment="Path=/home/radmark/app/venv/bin"
+EnvironmentFile=/home/radmark/.env
 ExecStart=/home/radmark/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
 
 [Install]
