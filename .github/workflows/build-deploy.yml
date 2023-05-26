@@ -8,5 +8,11 @@ jobs:
     steps:
       - name: pulling git repo
         uses: actions/checkout@v2
-      - name: say hi to radmilo
-        run: echo "say hi to radmilo"
+      - name: install python version 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: update pip
+        run: python -m pip install --upgrade pip
+      - name: install all dependencies
+        run: pip install -r requirements.txt
